@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Template Add-on
+ * Enhanced Tabs Add-on
  * %%
- * Copyright (C) 2021 Flowing Code
+ * Copyright (C) 2023 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,14 +17,14 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.template.test;
+package com.flowingcode.vaadin.addons.enhancedtabs.test;
 
+import com.flowingcode.vaadin.addons.enhancedtabs.EnhancedTabs;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import com.flowingcode.vaadin.addons.template.TemplateAddon;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -44,7 +44,7 @@ public class SerializationTest {
   @Test
   public void testSerialization() throws ClassNotFoundException, IOException {
     try {
-      testSerializationOf(new TemplateAddon());
+      testSerializationOf(new EnhancedTabs());
     } catch (Exception e) {
       Assert.fail("Problem while testing serialization: " + e.getMessage());
     }

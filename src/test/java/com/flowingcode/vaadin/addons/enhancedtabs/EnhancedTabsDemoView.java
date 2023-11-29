@@ -1,15 +1,15 @@
 /*-
  * #%L
- * App Layout Addon
+ * Enhanced Tabs Add-on
  * %%
- * Copyright (C) 2018 - 2020 Flowing Code
+ * Copyright (C) 2023 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,22 +17,24 @@
  * limitations under the License.
  * #L%
  */
-package com.flowingcode.vaadin.addons.template.test;
+package com.flowingcode.vaadin.addons.enhancedtabs;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import com.flowingcode.vaadin.addons.DemoLayout;
-import com.flowingcode.vaadin.addons.template.TemplateDemoView;
+import com.flowingcode.vaadin.addons.GithubBranch;
+import com.flowingcode.vaadin.addons.GithubLink;
+import com.flowingcode.vaadin.addons.demo.TabbedDemo;
+import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.Route;
-import org.junit.Test;
 
-public class LayoutTest {
+@SuppressWarnings("serial")
+@ParentLayout(DemoLayout.class)
+@Route(value = "enhanced-tabs")
+@GithubLink("https://github.com/FlowingCode/EnhancedTabs")
+@GithubBranch("initial-implementation")
+public class EnhancedTabsDemoView extends TabbedDemo {
 
-  @Test
-  public void testDemoLayout() {
-    Route route = TemplateDemoView.class.getAnnotation(Route.class);
-    assertEquals("com.flowingcode.vaadin.addons.DemoLayout", DemoLayout.class.getName());
-    assertEquals(DemoLayout.class, route.layout());
-    assertNotEquals("", route.value());
+  public EnhancedTabsDemoView() {
+    addDemo(EnhancedTabsDemo.class);
+    setSizeFull();
   }
 }

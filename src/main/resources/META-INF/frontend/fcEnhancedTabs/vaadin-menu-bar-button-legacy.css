@@ -1,8 +1,8 @@
 /*-
  * #%L
- * Template Add-on
+ * Enhanced Tabs Add-on
  * %%
- * Copyright (C) 2021 Flowing Code
+ * Copyright (C) 2023 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,23 @@
  * limitations under the License.
  * #L%
  */
+/** EnhancedTabs styles for Vaadin 23*/
 
-package com.flowingcode.vaadin.addons.template;
+:host([theme~='fc-enhanced-tabs']) {
+  background: transparent;
+  box-shadow: inset 0 -1px 0 0 var(--lumo-contrast-10pct);
+}
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
+:host([theme~='fc-enhanced-tabs'])::before {
+  display: none;
+}
 
-@SuppressWarnings("serial")
-@Route("")
-public class DemoView extends VerticalLayout implements BeforeEnterObserver {
+:host([theme~='fc-enhanced-tabs'])::after {
+  display: none;
+}
 
-  @Override
-  public void beforeEnter(BeforeEnterEvent event) {
-    event.forwardTo(TemplateDemoView.class);
-  }
+:host([theme~='fc-enhanced-tabs']), 
+:host([theme~='fc-enhanced-tabs']) vaadin-context-menu-item {
+  margin: 0;
+  padding: 0;
 }
