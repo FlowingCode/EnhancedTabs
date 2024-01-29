@@ -30,7 +30,7 @@ import com.vaadin.flow.router.Route;
 @ParentLayout(DemoLayout.class)
 @Route(value = "enhanced-tabs")
 @GithubLink("https://github.com/FlowingCode/EnhancedTabs")
-@GithubBranch("initial-implementation")
+@GithubBranch("master")
 public class EnhancedTabsDemoView extends TabbedDemo {
 
   public EnhancedTabsDemoView() {
