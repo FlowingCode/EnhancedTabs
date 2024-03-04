@@ -1,5 +1,5 @@
-[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/enhanced-tabs-addon)
-[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/enhanced-tabs-addon.svg)](https://vaadin.com/directory/component/enhanced-tabs-addon)
+[![Published on Vaadin Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/enhanced-tabs-add-on)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/enhanced-tabs-add-on.svg)](https://vaadin.com/directory/component/enhanced-tabs-add-on)
 [![Build Status](https://jenkins.flowingcode.com/job/EnhancedTabs-addon/badge/icon)](https://jenkins.flowingcode.com/job/EnhancedTabs-addon)
 [![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/enhanced-tabs-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/enhanced-tabs-addon)
 
@@ -17,7 +17,7 @@ Enhanced Tabs component for Vaadin Flow.
 
 ## Download release
 
-[Available in Vaadin Directory](https://vaadin.com/directory/component/enhanced-tabs-addon)
+[Available in Vaadin Directory](https://vaadin.com/directory/component/enhanced-tabs-add-on)
 
 ### Maven install
 
