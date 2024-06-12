@@ -564,6 +564,10 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
                         + index));
   }
 
+  public int getTabCount() {
+    return (int) getTabs().count();
+  }
+
   private Stream<Tab> getTabs() {
     return getContent().getItems().stream().map(EnhancedTabs::getTab).filter(Objects::nonNull);
   }
