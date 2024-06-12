@@ -20,11 +20,12 @@
 vaadin-menu-bar[theme~='fc-enhanced-tabs'] {
   width : 100%;
   min-width: var(--lumo-size-m);	
+  box-shadow: inset 0 -1px 0 0 var(--lumo-contrast-10pct);
 }
     
 vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] {
   background: transparent;
-  box-shadow: inset 0 -1px 0 0 var(--lumo-contrast-10pct);
+  box-shadow: none;
 }
 
 vaadin-menu-bar-button[theme~='fc-enhanced-tabs']::before {
