@@ -2,7 +2,7 @@
  * #%L
  * Enhanced Tabs Add-on
  * %%
- * Copyright (C) 2023 Flowing Code
+ * Copyright (C) 2023-2024 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,11 +41,13 @@ import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.HasEnabled;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasStyle;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.contextmenu.MenuItem;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.shared.Registration;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -194,6 +196,22 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
     } else {
       updateSelectedTab(false);
     }
+  }
+
+  public RouterLink addRouterLink(String text, Class<? extends Component> target) {
+    RouterLink routerLink = new RouterLink(text, target);
+    routerLink.getElement().executeJs(
+        "this.addEventListener('click', e => {\n"+
+        "e.preventDefault();\n"+
+        "this.dispatchEvent(new CustomEvent('client-side-click'));\n"+
+        "});\n");
+
+    routerLink.getElement().addEventListener("client-side-click", event -> {
+      UI.getCurrent().navigate(target);
+    });
+
+    add(new Tab(routerLink));
+    return routerLink;
   }
 
   /**
