@@ -50,6 +50,9 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.shared.Registration;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.UndeclaredThrowableException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -198,6 +201,23 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
     }
   }
 
+  private static final Method UI_navigate;
+  static {
+    try {
+      UI_navigate = UI.class.getMethod("navigate", Class.class);
+    } catch (NoSuchMethodException e) {
+      throw new NoSuchMethodError("UI.navigate(Class)");
+    }
+  }
+
+  private static void navigate(UI ui, Class<? extends Component> target) {
+    try {
+      UI_navigate.invoke(ui, target);
+    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+      throw new UndeclaredThrowableException(e);
+    }
+  }
+
   public RouterLink addRouterLink(String text, Class<? extends Component> target) {
     RouterLink routerLink = new RouterLink(text, target);
     routerLink.getElement().executeJs(
@@ -207,7 +227,7 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
         "});\n");
 
     routerLink.getElement().addEventListener("client-side-click", event -> {
-      UI.getCurrent().navigate(target);
+      navigate(UI.getCurrent(), target);
     });
 
     add(new Tab(routerLink));
