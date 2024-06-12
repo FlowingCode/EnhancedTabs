@@ -21,7 +21,7 @@
 
 :host([theme~='fc-enhanced-tabs']) {
   background: transparent;
-  box-shadow: inset 0 -1px 0 0 var(--lumo-contrast-10pct);
+  box-shadow: none;
 }
 
 :host([theme~='fc-enhanced-tabs'])::before {
