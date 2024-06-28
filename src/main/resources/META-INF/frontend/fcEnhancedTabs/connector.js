@@ -2,7 +2,7 @@
  * #%L
  * Enhanced Tabs Add-on
  * %%
- * Copyright (C) 2023 Flowing Code
+ * Copyright (C) 2023-2024 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@
 (function () { 
   window.Vaadin.Flow.fcEnhancedTabsConnector = {
 	initLazy: tabs => {
+
+		if (tabs.fcEnhancedTabsConnector) return;
+		tabs.fcEnhancedTabsConnector = true;
 		
 		let close = tabs._close;
 		
