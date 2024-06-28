@@ -187,7 +187,8 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
           ev ->
               tab.getElement()
                   .executeJs(
-                      "this.addEventListener('click', ()=>{let overlay = this.closest('vaadin-menu-bar-overlay, vaadin-context-menu-overlay'); overlay && overlay.close();})"));
+                  "this.addEventListener('click', ()=>{let overlay = this.closest('vaadin-menu-bar-overlay, vaadin-context-menu-overlay'); overlay && overlay.close();})",
+                  this));
     }
 
     if (tabs.length == 0) {
@@ -506,6 +507,7 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
 
       if (selectedTab != null) {
         selectedTab.setSelected(true);
+        getElement().executeJs("this.__detectOverflow()");
       }
 
       fireEvent(new SelectedChangeEvent(this, previousTab, changedFromClient));

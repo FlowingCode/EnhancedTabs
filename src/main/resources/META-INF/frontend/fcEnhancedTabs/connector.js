@@ -47,6 +47,31 @@
 			}
 		});
 		
+		const __detectOverflow = tabs.__detectOverflow.bind(tabs);
+
+		tabs.__detectOverflow = function() {
+			//restore the normal order of buttons
+			var buttons  = tabs._buttons;
+			const selectedButton = buttons.find(e=>e._position!==undefined);
+			if (selectedButton) {
+				buttons[0].parentElement.insertBefore(selectedButton, buttons[selectedButton._position+1]);
+				__detectOverflow();
+				selectedButton._position=undefined;
+			}
+		
+			__detectOverflow();
+			
+			// move the selected tab out of the overflow button
+			buttons  = tabs._buttons;
+			const selectedIndex = buttons.findIndex(e=>e.item.component && e.item.component.querySelector('vaadin-tab[selected]'));
+			const overflowIndex  = buttons.findIndex(e=>e.style.visibility);
+			if (selectedIndex>=overflowIndex && overflowIndex>0) {
+				buttons[0].parentElement.insertBefore(buttons[selectedIndex], buttons[overflowIndex-1]);
+				__detectOverflow();
+				buttons[selectedIndex]._position = selectedIndex;
+			}
+		};
+	
 	}	
   }
 })();
