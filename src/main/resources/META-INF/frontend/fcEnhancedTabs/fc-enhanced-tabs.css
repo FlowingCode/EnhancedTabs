@@ -70,6 +70,13 @@ vaadin-menu-bar-list-box[theme="fc-enhanced-tabs"] vaadin-tab[selected]::before,
 vaadin-menu-bar-list-box[theme="fc-enhanced-tabs"] vaadin-tab[selected]::after {
   transform: translateY(50%) scale(1);
 }
+vaadin-menu-bar-list-box vaadin-tab { 
+  flex-grow: 1
+}
+
+vaadin-menu-bar-list-box vaadin-tab a[href] {
+  justify-content: normal;
+}
 
 /*
 :host([orientation="vertical"]) ::slotted(a[href]) {
