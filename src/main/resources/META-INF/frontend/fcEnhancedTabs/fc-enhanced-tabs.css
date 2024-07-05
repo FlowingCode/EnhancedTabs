@@ -78,24 +78,5 @@ vaadin-menu-bar-list-box vaadin-tab a[href] {
   justify-content: normal;
 }
 
-/*
-:host([orientation="vertical"]) ::slotted(a[href]) {
-  justify-content: normal;
-}
-
-:host([dir="rtl"][selected]:not([orientation="vertical"]))::before, :host([dir="rtl"][selected]:not([orientation="vertical"]))::after {
-  transform: translateX(50%) scale(1);
-}
-
-:host([orientation="vertical"][dir="rtl"]) {
-  transform-origin: 100% 50%;
-}
-
-:host([dir="rtl"][orientation="vertical"])::before, :host([dir="rtl"][orientation="vertical"])::after {
-  left: auto;
-        right: 0;
-        border-radius: var(--lumo-border-radius) 0 0 var(--lumo-border-radius);
-        transform-origin: 0% 50%;
-}*/
 
 
