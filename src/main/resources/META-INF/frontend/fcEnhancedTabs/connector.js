@@ -64,9 +64,9 @@
 			// move the selected tab out of the overflow button
 			buttons  = tabs._buttons;
 			const selectedIndex = buttons.findIndex(e=>e.item.component && e.item.component.querySelector('vaadin-tab[selected]'));
-			const overflowIndex  = buttons.findIndex(e=>e.style.visibility);
-			if (selectedIndex>=overflowIndex && overflowIndex>0) {
-				buttons[0].parentElement.insertBefore(buttons[selectedIndex], buttons[overflowIndex-1]);
+			let overflowIndex  = buttons.findIndex(e=>e.style.visibility);
+			while (selectedIndex>=overflowIndex && overflowIndex>0 && buttons[selectedIndex].style.visibility) {
+				buttons[0].parentElement.insertBefore(buttons[selectedIndex], buttons[overflowIndex--]);
 				__detectOverflow();
 				buttons[selectedIndex]._position = selectedIndex;
 			}
