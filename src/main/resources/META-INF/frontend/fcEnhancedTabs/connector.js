@@ -65,7 +65,7 @@
 			buttons  = tabs._buttons;
 			const selectedIndex = buttons.findIndex(e=>e.item.component && e.item.component.querySelector('vaadin-tab[selected]'));
 			let overflowIndex  = buttons.findIndex(e=>e.style.visibility);
-			while (selectedIndex>=overflowIndex && overflowIndex>0 && buttons[selectedIndex].style.visibility) {
+			while (selectedIndex>=overflowIndex && overflowIndex>=0 && buttons[selectedIndex].style.visibility) {
 				buttons[0].parentElement.insertBefore(buttons[selectedIndex], buttons[overflowIndex--]);
 				__detectOverflow();
 				buttons[selectedIndex]._position = selectedIndex;
