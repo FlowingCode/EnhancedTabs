@@ -47,6 +47,7 @@ import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.shared.Registration;
 import java.io.Serializable;
@@ -65,15 +66,17 @@ import java.util.stream.Stream;
  * Tabs when you want to allow in-place navigation within a certain part of the UI, instead of
  * showing everything at once or forcing the user to navigate between different views.
  *
- * <p>{@link Tab} components can be added to this component with the {@link #add(Tab...)} method or
- * the {@link #Tabs(Tab...)} constructor. The Tab components added to it can be selected with the
- * {@link #setSelectedIndex(int)} or {@link #setSelectedTab(Tab)} methods. The first added {@link
- * Tab} component will be automatically selected, firing a {@link SelectedChangeEvent}, unless
- * autoselection is explicitly disabled with {@link #Tabs(boolean, Tab...)}, or {@link
- * #setAutoselect(boolean)}. Removing the selected tab from the component changes the selection to
- * the next available tab.
+ * <p>
+ * {@link Tab} components can be added to this component with the {@link #add(Tab...)} method or the
+ * {@link Tabs#Tabs(Tab...)} constructor. The Tab components added to it can be selected with the
+ * {@link #setSelectedIndex(int)} or {@link #setSelectedTab(Tab)} methods. The first added
+ * {@link Tab} component will be automatically selected, firing a {@link SelectedChangeEvent},
+ * unless autoselection is explicitly disabled with {@link Tabs#Tabs(boolean, Tab...)}, or
+ * {@link #setAutoselect(boolean)}. Removing the selected tab from the component changes the
+ * selection to the next available tab.
  *
- * <p><strong>Note:</strong> Adding or removing Tab components via the Element API, eg. {@code
+ * <p>
+ * <strong>Note:</strong> Adding or removing Tab components via the Element API, eg. {@code
  * tabs.getElement().insertChild(0, tab.getElement()); }, doesn't update the selected index, so it
  * may cause the selected tab to change unexpectedly.
  */
@@ -160,10 +163,11 @@ public class EnhancedTabs extends Composite<MenuBar> implements HasEnabled, HasS
   /**
    * Adds the given tabs to the component.
    *
-   * <p>The first added {@link Tab} component will be automatically selected, unless auto-selection
-   * is explicitly disabled with {@link #Tabs(boolean, Tab...)}, or {@link #setAutoselect(boolean)}.
-   * If a selection change listener has been added before adding the tabs, it will be notified with
-   * the auto-selected tab.
+   * <p>
+   * The first added {@link Tab} component will be automatically selected, unless auto-selection is
+   * explicitly disabled with {@link Tabs#Tabs(boolean, Tab...)}, or
+   * {@link #setAutoselect(boolean)}. If a selection change listener has been added before adding
+   * the tabs, it will be notified with the auto-selected tab.
    *
    * @param tabs the tabs to enclose
    */
