@@ -23,7 +23,7 @@ vaadin-context-menu-item[theme="fc-enhanced-tabs"] vaadin-tab {
   box-sizing: content-box
 }
 
-vaadin-context-menu-item::part(checkmark) {
+vaadin-context-menu-list-box[theme="fc-enhanced-tabs"] vaadin-context-menu-item::part(checkmark) {
   display: none
 }
 
