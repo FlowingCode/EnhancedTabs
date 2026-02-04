@@ -17,6 +17,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<drivers.dir>${project.basedir}/drivers</drivers.dir>
 		<jetty.version>9.4.36.v20210114</jetty.version>
+		<flowingcode.commons.demo.version>3.9.0</flowingcode.commons.demo.version>
 	</properties>
 
 	<organization>
@@ -57,11 +58,6 @@
 				<scope>import</scope>
 				<version>${vaadin.version}</version>
 			</dependency>
-            <dependency>
-            	<groupId>com.flowingcode.vaadin.addons.demo</groupId>
-            	<artifactId>commons-demo</artifactId>
-            	<version>3.9.0</version>
-            </dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -128,6 +124,7 @@
         <dependency>
 			<groupId>com.flowingcode.vaadin.addons.demo</groupId>
 			<artifactId>commons-demo</artifactId>
+			<version>${flowingcode.commons.demo.version}</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -515,6 +512,7 @@
 				<maven.compiler.target>17</maven.compiler.target>
 				<vaadin.version>24.2.6</vaadin.version>
 				<jetty.version>11.0.12</jetty.version>
+				<flowingcode.commons.demo.version>4.1.0</flowingcode.commons.demo.version>
 			</properties>
 			<repositories>
 				<repository>
@@ -535,18 +533,6 @@
 					<version>6.0.0</version>
 					<scope>provided</scope>
 				</dependency>
-				<dependency>
-					<groupId>com.flowingcode.vaadin.addons.demo</groupId>
-					<artifactId>commons-demo</artifactId>
-					<version>4.1.0</version>
-					<scope>test</scope>
-					<exclusions>
-						<exclusion>
-							<groupId>com.flowingcode.vaadin.addons</groupId>
-							<artifactId>enhanced-tabs-addon</artifactId>
-						</exclusion>
-					</exclusions>
-				</dependency>
 			</dependencies>
 		</profile>
 		<profile>
@@ -556,6 +542,7 @@
 				<maven.compiler.target>21</maven.compiler.target>
 				<vaadin.version>25.0.0</vaadin.version>
 				<jetty.version>11.0.26</jetty.version>
+				<flowingcode.commons.demo.version>5.0.0</flowingcode.commons.demo.version>
 			</properties>
 			<dependencies>
 				<dependency>
@@ -568,18 +555,6 @@
 					<groupId>com.vaadin</groupId>
 					<artifactId>vaadin-dev</artifactId>
 					<optional>true</optional>
-				</dependency>
-				<dependency>
-					<groupId>com.flowingcode.vaadin.addons.demo</groupId>
-					<artifactId>commons-demo</artifactId>
-					<version>5.0.0</version>
-					<scope>test</scope>
-					<exclusions>
-						<exclusion>
-							<groupId>com.flowingcode.vaadin.addons</groupId>
-							<artifactId>enhanced-tabs-addon</artifactId>
-						</exclusion>
-					</exclusions>
 				</dependency>
 			</dependencies>
 		</profile>
