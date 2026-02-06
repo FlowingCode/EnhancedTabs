@@ -43,6 +43,10 @@ vaadin-menu-bar-list-box[theme="fc-enhanced-tabs"] vaadin-menu-bar-item {
   padding: 0;
 }
 
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs'][slot="overflow"] {
+  padding: 0 var(--vaadin-gap-s, 0);
+}
+
 vaadin-menu-bar-list-box[theme="fc-enhanced-tabs"] vaadin-menu-bar-item::part(checkmark) {
   display: none
 }
@@ -78,5 +82,19 @@ vaadin-menu-bar-list-box vaadin-tab a[href] {
   justify-content: normal;
 }
 
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] {
+    margin: 0;
+    box-shadow: none;
+    --vaadin-border-color-secondary: transparent;
+    &:nth-last-child(2):has(+ vaadin-menu-bar-button[slot="overflow"][hidden]) { border-left: none; }
+    &[role="menuitem"] ~ vaadin-menu-bar-button { border-left: none; }
+    &:not(:last-child) { border-right: none; }
+}
 
 
+
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] vaadin-menu-bar-item {
+  background: var(--aura-surface-color, unset);
+  --aura-surface-level: -1;
+  --aura-surface-opacity: 0.3;
+}
