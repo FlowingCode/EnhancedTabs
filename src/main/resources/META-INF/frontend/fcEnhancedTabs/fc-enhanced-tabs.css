@@ -88,7 +88,7 @@ vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] {
     --vaadin-border-color-secondary: transparent;
     &:nth-last-child(2):has(+ vaadin-menu-bar-button[slot="overflow"][hidden]) { border-left: none; }
     &[role="menuitem"] ~ vaadin-menu-bar-button { border-left: none; }
-    &:not(:last-child) { border-right: none; }
+    &:not(:last-child, :has(+ vaadin-menu-bar-button[slot="overflow"][hidden])) { border-right: none; }
 }
 
 
