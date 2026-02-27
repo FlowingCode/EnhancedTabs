@@ -98,3 +98,39 @@ vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] vaadin-menu-bar-item {
   --aura-surface-level: -1;
   --aura-surface-opacity: 0.3;
 }
+
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] {
+  --focus-ring-width: var(--vaadin-focus-ring-width, 2px);
+}
+
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] vaadin-tab {
+  --_lumo-flag: var(--vaadin-lumo-theme, 0);
+
+  padding-block: calc(
+    (var(--_lumo-flag) * 0.5rem) + 
+    ((1 - var(--_lumo-flag)) * (var(--vaadin-padding-block-container, calc(0.5rem + var(--focus-ring-width))) - var(--focus-ring-width)))
+  );
+
+  padding-inline: calc(
+    (var(--_lumo-flag) * 0.5rem) + 
+    ((1 - var(--_lumo-flag)) * (var(--vaadin-padding-inline-container, calc(0.5rem + var(--focus-ring-width))) - var(--focus-ring-width)))
+  );
+  
+  margin-block: calc(
+    (1 - var(--_lumo-flag)) * max(0px, var(--focus-ring-width) + var(--vaadin-padding-block-container, -9999px) - var(--vaadin-padding-block-container, 0px))
+  );
+  
+  margin-inline: calc(
+    (1 - var(--_lumo-flag)) * max(0px, var(--focus-ring-width) + var(--vaadin-padding-inline-container, -9999px) - var(--vaadin-padding-inline-container, 0px))
+  );
+  
+}
+
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs'][focus-ring],
+vaadin-menu-bar-button[theme~='fc-enhanced-tabs']:focus-visible {
+  outline: none;
+  vaadin-menu-bar-item {
+    box-shadow: inset 0 0 0 var(--focus-ring-width) var(--vaadin-focus-ring-color, var(--lumo-primary-color-50pct));
+    border-radius: var(--lumo-border-radius-m, var(--vaadin-tab-border-radius, var(--vaadin-radius-m)));
+  }
+}
