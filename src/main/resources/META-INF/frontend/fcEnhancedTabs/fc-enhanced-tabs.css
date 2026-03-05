@@ -80,6 +80,7 @@ vaadin-menu-bar-list-box vaadin-tab {
 
 vaadin-menu-bar-list-box vaadin-tab a[href] {
   justify-content: normal;
+  width: 100%;
 }
 
 vaadin-menu-bar-button[theme~='fc-enhanced-tabs'] {
