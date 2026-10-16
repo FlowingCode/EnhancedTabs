@@ -2,6 +2,7 @@
 [![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/enhanced-tabs-add-on.svg)](https://vaadin.com/directory/component/enhanced-tabs-add-on)
 [![Build Status](https://jenkins.flowingcode.com/job/EnhancedTabs-addon/badge/icon)](https://jenkins.flowingcode.com/job/EnhancedTabs-addon)
 [![Maven Central](https://img.shields.io/maven-central/v/com.flowingcode.vaadin.addons/enhanced-tabs-addon)](https://mvnrepository.com/artifact/com.flowingcode.vaadin.addons/enhanced-tabs-addon)
+[![Javadoc](https://img.shields.io/badge/javadoc-00b4f0)](https://javadoc.flowingcode.com/artifact/com.flowingcode.vaadin.addons/enhanced-tabs-addon)
 
 # EnhancedTabs Add-on
 
